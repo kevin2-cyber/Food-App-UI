@@ -52,11 +52,22 @@ class HomeScreen extends StatelessWidget {
               child: ImageCarousel(),
             ),
           ),
+          SliverPadding(
+            padding: const EdgeInsets.all(defaultPadding),
+            sliver: SliverToBoxAdapter(
+              child: SectionTitle(
+                title: 'Featured Partners',
+                onTap: (){},
+              ),
+            ),
+          ),
         ],
       ),
     );
   }
 }
+
+
 
 
 
