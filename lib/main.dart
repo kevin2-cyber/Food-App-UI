@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
     // SizeConfig().init(context);
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Food UI Kit',
+      title: 'Food App UI',
       theme: buildThemeData(),
 
       /// On first screen must call [SizeConfig().init(context)]
