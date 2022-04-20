@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:food_app_ui/core/constants.dart';
+import 'package:food_app_ui/core/core.dart';
 import 'package:food_app_ui/model/demo_data.dart';
 import '../components/components.dart';
 
@@ -116,7 +116,7 @@ class HomeScreen extends StatelessWidget {
                             Spacer(),
                             CircleAvatar(
                               radius: 2,
-                              backgroundColor: Color(0xFF868686),
+                              backgroundColor: kBodyTextColor,
                             ),
                             Spacer(),
                             Text('Free Delivery'),
