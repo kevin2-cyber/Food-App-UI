@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: buildThemeData(),
 
       /// On first screen must call [SizeConfig().init(context)]
-      home: HomeScreen(),
+      home: const HomeScreen(),
     );
   }
 }
