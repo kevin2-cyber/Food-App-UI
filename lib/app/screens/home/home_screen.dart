@@ -38,7 +38,7 @@ class HomeScreen extends StatelessWidget {
             ),
             actions: [
               TextButton(
-                onPressed: (){},
+                onPressed: () {},
                 child: const Text(
                   'Filter',
                   style: TextStyle(color: Colors.black),
@@ -57,75 +57,28 @@ class HomeScreen extends StatelessWidget {
             sliver: SliverToBoxAdapter(
               child: SectionTitle(
                 title: 'Featured Partners',
-                onTap: (){},
+                onTap: () {},
               ),
             ),
           ),
           SliverToBoxAdapter(
-            child: Row(
-              children: [
-                SizedBox(
-                  width: 200,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      AspectRatio(
-                        aspectRatio: 1.25,
-                        child: Image.asset('assets/images/medium_1.png'),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(vertical: defaultPadding / 2),
-                        child: Text(
-                            demoMediumCardData[0]['name'],
-                          style: Theme.of(context).textTheme.headline6,
-                        ),
-                      ),
-                      Text(
-                          demoMediumCardData[0]['location'],
-                        style: TextStyle(
-                          color: kBodyTextColor,
-                        ),
-                      ),
-                      DefaultTextStyle(
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 12,
-                        ),
-                        child: Row(
-                          children: [
-                            Container(
-                              padding: const EdgeInsets.symmetric(
-                                horizontal: defaultPadding / 2,
-                                vertical: defaultPadding / 8,
-                              ),
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.all(Radius.circular(6)),
-                                color: kActiveColor,
-                              ),
-                              child: Text(
-                                  '4.6',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 12,
-                                ),
-                              ),
-                            ),
-                            Spacer(),
-                            Text('25min'),
-                            Spacer(),
-                            CircleAvatar(
-                              radius: 2,
-                              backgroundColor: kBodyTextColor,
-                            ),
-                            Spacer(),
-                            Text('Free Delivery'),
-                          ],
-                        ),
-                      ),
-                    ],
+            child: SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                  children: List.generate(
+                demoMediumCardData.length,
+                (index) => Padding(
+                  padding: const EdgeInsets.only(left: defaultPadding),
+                  child: RestaurantInfoMediumCard(
+                    title: demoMediumCardData[index]['name'],
+                    image: demoMediumCardData[index]['image'],
+                    deliveryTime: demoMediumCardData[index]['delivertTime'],
+                    rating: demoMediumCardData[index]['rating'],
+                    onPressed: () {},
+                    location: demoMediumCardData[index]['location'],
                   ),
                 ),
-              ],
+              )),
             ),
           ),
         ],
@@ -133,9 +86,5 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
-
-
-
-
 
 
