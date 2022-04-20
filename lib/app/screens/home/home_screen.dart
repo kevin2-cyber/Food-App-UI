@@ -14,6 +14,7 @@ class HomeScreen extends StatelessWidget {
         slivers: [
           SliverAppBar(
             backgroundColor: Colors.transparent,
+            floating: true,
             elevation: 0,
             title: Column(
               children: [
@@ -79,6 +80,41 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
               )),
+            ),
+          ),
+          SliverPadding(
+            padding: const EdgeInsets.all(defaultPadding),
+            sliver: SliverToBoxAdapter(
+              child: Image.asset('assets/images/Banner.png'),
+            ),
+          ),
+          SliverPadding(
+            padding: const EdgeInsets.all(defaultPadding),
+            sliver: SliverToBoxAdapter(
+              child: SectionTitle(
+                title: 'Best Pick',
+                onTap: () {},
+              ),
+            ),
+          ),
+          SliverToBoxAdapter(
+            child: SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                  children: List.generate(
+                    demoMediumCardData.length,
+                        (index) => Padding(
+                      padding: const EdgeInsets.only(left: defaultPadding),
+                      child: RestaurantInfoMediumCard(
+                        title: demoMediumCardData[index]['name'],
+                        image: demoMediumCardData[index]['image'],
+                        deliveryTime: demoMediumCardData[index]['delivertTime'],
+                        rating: demoMediumCardData[index]['rating'],
+                        onPressed: () {},
+                        location: demoMediumCardData[index]['location'],
+                      ),
+                    ),
+                  )),
             ),
           ),
         ],
