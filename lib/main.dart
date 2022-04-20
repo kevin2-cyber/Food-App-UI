@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import 'core/theme.dart';
+import 'screens/home/home_screen.dart';
+
 void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
@@ -7,6 +10,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    // SizeConfig().init(context);
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Food UI Kit',
+      theme: buildThemeData(),
+
+      /// On first screen must call [SizeConfig().init(context)]
+      home: HomeScreen(),
+    );
   }
 }
