@@ -15,7 +15,6 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Food App UI',
       theme: buildThemeData(),
-
       /// On first screen must call [SizeConfig().init(context)]
       home: const HomeScreen(),
     );
